@@ -65,7 +65,7 @@ public class MainClass extends Print {
             case 7:
                 int number = 153426436;
                 System.out.println(number);
-                System.out.println(RekNumbers(number, 10));
+                RekNumbers(number, 10);
                 break;
 
             case 8:
@@ -260,10 +260,12 @@ public static String RekNumbers(int n, int del){
         n-=n%del;
         del*=10;
         RekNumbers(n,del);
+    }else{
+        System.out.println("\n"+"все цифры числа выведены");
     }
-
-    return "\n"+"все цифры числа выведены";
+    return "строка, которую никто не увидит=)";
 }
+
 
 
 //    Сумма цифр числа
