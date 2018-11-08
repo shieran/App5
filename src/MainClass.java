@@ -71,7 +71,8 @@ public class MainClass extends Print {
             case 8:
                 int num8=12345591;
                 System.out.println(num8);
-                System.out.println(RekSum(num8, 10, 0));
+//                System.out.println(
+                        RekSum(num8, 10, 0);
                 break;
         }
 
@@ -260,8 +261,10 @@ public static String RekNumbers(int n, int del){
         n-=n%del;
         del*=10;
         RekNumbers(n,del);
+    }else{
+        System.out.println("\n"+"все цифры числа выведены");
     }
-    return "\n"+"все цифры числа выведены";
+    return "строка, которую никто не увидит=)";
 }
 
 
