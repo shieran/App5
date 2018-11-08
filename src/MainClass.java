@@ -254,43 +254,34 @@ public class MainClass extends Print {
 // разделяя их пробелами или новыми строками.
 //При решении этой задачи нельзя использовать строки, списки, массивы
 // (ну и циклы, разумеется). Разрешена только рекурсия и целочисленная арифметика.
-public static String RekNumbers(int n, int del){
-    if(n>0&&del<=10){//проверка на первый шаг, т.к. дальше на последующих del будем делить на 10
-        System.out.print(n%del+" ");
-        n-=n%del;
-        del*=10;
-        System.out.println(RekNumbers(n,del));
-    }else if(n>0){System.out.print((n%del)/(del/10)+" ");//тут добавляем /(del/10), чтобы получить
-        //чтобы получать вторую и последующие цифры
-        n-=n%del;
-        del*=10;
-        RekNumbers(n,del);
+    public static String RekNumbers(int n, int del){
+            if(n>0){
+                System.out.print((n%del)/(del/10)+" ");
+                 n-=n%del;
+                 del*=10;
+                 RekNumbers(n,del);
+                 }else{
+                     System.out.println("\n"+"все цифры числа выведены");
+                 }
+        return "строка, которую никто не увидит=)";
     }
-    return "\n"+"все цифры числа выведены";
-}
 
 
 //    Сумма цифр числа
 //Дано натуральное число N. Вычислите сумму его цифр.
 //При решении этой задачи нельзя использовать строки,
 // списки, массивы (ну и циклы, разумеется).
-public static String RekSum(int n, int del, int sum){
-    if(n>0&&del<=10){//проверка на первый шаг, т.к. дальше на последующих del будем делить на 10
-        sum+=n%del;
-        n-=n%del;
-        del*=10;
-        RekSum(n,del, sum);
-    }else if(n>0){
-        sum+=(n%del)/(del/10);//тут добавляем /(del/10), чтобы получить
-        //чтобы получать вторую и последующие цифры
-        n-=n%del;
-        del*=10;
-        RekSum(n,del, sum);
-    }else{
-        System.out.println("сумма числа: "+sum);//добавлен блок else без вызова метода RekSum,
-        //чтобы сразу вывести сумму на печать, а возвращем строку.
-        //Так не будет проблем с рекурсией при возврате суммы.
+    public static String RekSum(int n, int del, int sum){
+            if(n>0){
+            sum+=(n%del)/(del/10);
+            n-=n%del;
+            del*=10;
+            RekSum(n,del, sum);
+        }else{
+            System.out.println("сумма числа: "+sum);//добавлен блок else без вызова метода RekSum,
+                                                    //чтобы сразу вывести сумму на печать, а возвращем строку.
+                                                    //Так не будет проблем с рекурсией при возврате суммы.
+        }
+        return "сумма посчитана";
     }
-    return "сумма посчитана";
-}
 }
