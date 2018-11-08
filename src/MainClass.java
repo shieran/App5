@@ -65,7 +65,7 @@ public class MainClass extends Print {
             case 7:
                 int number = 153426436;
                 System.out.println(number);
-                System.out.println(RekNumbers(number, 10));
+                RekNumbers(number, 10);
                 break;
 
             case 8:
@@ -254,15 +254,17 @@ public class MainClass extends Print {
 // разделяя их пробелами или новыми строками.
 //При решении этой задачи нельзя использовать строки, списки, массивы
 // (ну и циклы, разумеется). Разрешена только рекурсия и целочисленная арифметика.
-    public static String RekNumbers(int n, int del){
-            if(n>0){
-                System.out.print((n%del)/(del/10)+" ");
-                 n-=n%del;
-                 del*=10;
-                 RekNumbers(n,del);
-                 }
-       return "\n"+"все цифры числа выведены";
+public static String RekNumbers(int n, int del){
+    if(n>0){
+        System.out.print((n%del)/(del/10)+" ");
+        n-=n%del;
+        del*=10;
+        RekNumbers(n,del);
+    }else{
+        System.out.println("\n"+"все цифры числа выведены");
     }
+    return "строка, которую никто не увидит=)";
+}
 
 
 //    Сумма цифр числа
