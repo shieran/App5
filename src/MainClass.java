@@ -274,7 +274,7 @@ public class MainClass extends Print {
     public static String RekSum(int n, int del, int sum){
             if(n>0){
             sum+=(n%del)/(del/10);
-            n-=n%del;
+//            n-=n%del;
             del*=10;
             RekSum(n,del, sum);
         }else{
