@@ -261,7 +261,7 @@ public static String RekNumbers(int n, int del){
         del*=10;
         RekNumbers(n,del);
     }
-    return "\n"+"все цифры выведены";
+    return "\n"+"все цифры числа выведены";
 }
 
 
