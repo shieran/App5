@@ -69,7 +69,7 @@ public class MainClass extends Print {
                 break;
 
             case 8:
-                int num8=48916564;
+                int num8=12345591;
                 System.out.println(num8);
                 System.out.println(RekSum(num8, 10, 0));
                 break;
@@ -255,18 +255,15 @@ public class MainClass extends Print {
 //При решении этой задачи нельзя использовать строки, списки, массивы
 // (ну и циклы, разумеется). Разрешена только рекурсия и целочисленная арифметика.
     public static String RekNumbers(int n, int del){
-        if(n>0&&del<=10){//проверка на первый шаг, т.к. дальше на последующих del будем делить на 10
-            System.out.print(n%del+" ");
-            n-=n%del;
-            del*=10;
-            System.out.println(RekNumbers(n,del));
-        }else if(n>0){System.out.print((n%del)/(del/10)+" ");//тут добавляем /(del/10), чтобы получить
-                                                             //чтобы получать вторую и последующие цифры
-        n-=n%del;
-        del*=10;
-        RekNumbers(n,del);
-        }
-        return "\n"+"все цифры числа выведены";
+            if(n>0){
+                System.out.print((n%del)/(del/10)+" ");
+                 n-=n%del;
+                 del*=10;
+                 RekNumbers(n,del);
+                 }else{
+                     System.out.println("\n"+"все цифры числа выведены");
+                 }
+        return "строка, которую никто не увидит=)";
     }
 
 
@@ -275,14 +272,8 @@ public class MainClass extends Print {
 //При решении этой задачи нельзя использовать строки,
 // списки, массивы (ну и циклы, разумеется).
     public static String RekSum(int n, int del, int sum){
-        if(n>0&&del<=10){//проверка на первый шаг, т.к. дальше на последующих del будем делить на 10
-            sum+=n%del;
-            n-=n%del;
-            del*=10;
-            RekSum(n,del, sum);
-        }else if(n>0){
-            sum+=(n%del)/(del/10);//тут добавляем /(del/10), чтобы получить
-                                  //чтобы получать вторую и последующие цифры
+            if(n>0){
+            sum+=(n%del)/(del/10);
             n-=n%del;
             del*=10;
             RekSum(n,del, sum);
