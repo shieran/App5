@@ -63,7 +63,7 @@ public class MainClass extends Print {
                 break;
 
             case 7:
-                int number = 153426436;
+                int number = 987654321;
                 System.out.println(number);
                 System.out.println(RekNumbers(number, 10));
                 break;
